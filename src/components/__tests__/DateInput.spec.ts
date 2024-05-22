@@ -20,6 +20,8 @@ describe('DateInput', () => {
     })
     const input = wrapper.find('input')
     await input.setValue('13/32/2023')
+    console.log(wrapper.emitted('update:modelValue'),"code");
+    
     expect(wrapper.emitted('update:modelValue')?.flat(1)[0]).toBeUndefined() // return empty string
   })
   it('changes the mask based on locale', async () => {
